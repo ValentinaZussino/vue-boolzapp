@@ -1,7 +1,7 @@
 :root {
     --darkgreen:rgb(2, 149, 137);
     --lightgreen: rgb(219, 247, 195);
-    --beigesfondo: rgb(220, 218, 211);
+    --graysfondo: rgb(216, 216, 213);
     --gray: rgb(234, 234, 234);
     --darkgray: rgb(177, 177, 177);
     --beige: rgb(243, 238, 234);
@@ -9,11 +9,15 @@
     --lightblue: rgb(142, 218, 252);
     --white: white;
 }
+img {
+    max-width: 100%;
+    /* height: 100%; */
+}
 .debug {border: 2px solid red;}
 .debug2 {border: 2px solid rgb(17, 0, 255);}
 .main-wrapper {
     height: 100vh;
-    background-image: linear-gradient(var(--darkgreen) 15%, var(--beigesfondo) 15%);
+    background-image: linear-gradient(var(--darkgreen) 15%, var(--graysfondo) 15%);
     padding: 30px 70px;
     overflow: hidden;
 }
@@ -52,6 +56,36 @@
 .contacts-list {
     height: calc(100% - 150px);
     overflow-y: auto;
+}
+.single-contact {
+    height: 60px;
+    display: flex;
+    align-items: center;
+    padding: 3px 0px 3px 10px;
+}
+.img-single-contact {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.name-single-contact, .time-single-contact {
+    height: 100%;
+}
+.name-single-contact {
+    flex-grow: 1;
+    padding-left: 10px;
+    font-size: 14px;
+    line-height: 16px;
+}
+.last-msg {
+    font-size: 12px; 
+    color: var(--darkgray);
+}
+.time-single-contact {
+    width: 40px;
+    font-size: 12px;
+    color: var(--darkgray);
 }
 .single-chat-content {
     height: calc(100% - 100px);
