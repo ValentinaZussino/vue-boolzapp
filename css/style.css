@@ -1,1 +1,31 @@
-body{background-color: red;}
+:root{
+    --darkgreen:rgb(2, 149, 137);
+    --lightgreen: rgb(219, 247, 195);
+    --beigesfondo: rgb(220, 218, 211);
+    --gray: rgb(234, 232, 234);
+    --beige: rgb(244, 237, 234);
+    --grayactive: rgb(235, 233, 235);
+    --white: white;
+}
+.debug {border: 2px solid red;}
+.debug2 {border: 2px solid rgb(17, 0, 255);}
+.main-wrapper{
+    height: 100vh;
+    background-image: linear-gradient(var(--darkgreen), var(--beigesfondo));
+    padding: 30px 70px;
+    overflow: hidden;
+}
+.central-container{
+    height: calc(100vh - 60px);
+    display: flex;
+}
+.left-column{
+    width: 35%;
+    height: 100%;
+    background-color: var(--white) ;
+}
+.right-column{
+    width: 65%;
+    height: 100%;
+    background-image: url(../img/mine.jpg);
+}
