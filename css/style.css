@@ -17,7 +17,7 @@ img {
 .debug2 {border: 2px solid rgb(17, 0, 255);}
 .main-wrapper {
     height: 100vh;
-    background-image: linear-gradient(var(--darkgreen) 15%, var(--graysfondo) 15%);
+    background-image: linear-gradient(var(--darkgreen) 120px, var(--graysfondo) 0%);
     padding: 30px 70px;
     overflow: hidden;
 }
@@ -167,11 +167,38 @@ img {
 .single-chat-content {
     height: calc(100% - 100px);
     overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    padding: 5px 60px;
 }
-.chat-msgs-wrapper{
-    height: 100%;
-    width: 75%;
-    margin: 0 auto;
+.single-chat-content div {
+    max-width: 45%;
+    margin-bottom: 8px;
+    padding: 8px 8px 12px 8px;
+    font-size: 13px;
+    position: relative;
+}
+.single-chat-content div p {
+    margin: 0;
+    width: 80%;
+}
+.single-chat-content div::after{
+    content: '12:00';
+    position: absolute;
+    right: 3px;
+    bottom: 3px;
+    font-size: 10px;
+    color: var(--darkgray);
+}
+.sent {
+    background-color: var(--lightgreen);
+    border-radius: 5px;
+    align-self: flex-end;
+}
+.received {
+    background-color: var(--white);
+    border-radius: 5px;
+    align-self: flex-start;
 }
 .bottom-beige-bar {
     height: 50px;
