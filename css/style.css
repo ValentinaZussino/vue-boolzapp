@@ -42,8 +42,29 @@ img {
     background-color: var(--gray);
     height: 50px;
 }
-.user-controls {
+.user-control-bar {
     border-right: 1px solid var(--darkgray);
+    display: flex;
+    align-items: center;
+    padding: 5px 10px;
+}
+.img-user {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.user-name {
+    font-size: 13px;
+    padding-left: 2px;
+    font-weight: 600;
+    flex-grow: 1;
+}
+.controls-user {
+    color: var(--darkgray);
+}
+.controls-user i {
+    cursor: pointer;
 }
 .notifications-control {
     height: 60px;
