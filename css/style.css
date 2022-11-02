@@ -168,6 +168,11 @@ img {
     height: calc(100% - 100px);
     overflow-y: auto;
 }
+.chat-msgs-wrapper{
+    height: 100%;
+    width: 75%;
+    margin: 0 auto;
+}
 .bottom-beige-bar {
     height: 50px;
     background-color: var(--beige);
