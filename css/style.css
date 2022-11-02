@@ -184,6 +184,7 @@ img {
     text-align: center;
     line-height: 50px;
     cursor: pointer;
+    color: rgb(90, 90, 90);
 }
 .input-message {
     flex-grow: 1;

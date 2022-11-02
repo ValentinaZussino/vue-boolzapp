@@ -62,14 +62,14 @@
                 <!-- div per elenco contatti -->
                 <div class="contacts-list">
                     <!-- singolo contatto -->
-                    <div class="single-contact">
+                    <div class="single-contact" v-for="(item, index) in contacts" :key="index">
                         <!-- img contatto -->
                         <div class="img-single-contact">
-                            <img src="./img/avatar_1.jpg" alt="">
+                            <img :src="`./img/avatar${item.avatar}.jpg`" alt="">
                         </div>
                         <!-- nome contatto -->
                         <div class="name-single-contact">
-                            <span class="fw-bold d-block">Michele</span>
+                            <span class="fw-bold d-block">{{item.name}}</span>
                             <span class="d-block last-msg">Ultimo messaggio inviato</span>
                         </div>
                         <!-- orario -->
