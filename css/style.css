@@ -14,8 +14,6 @@
 img {
     max-width: 100%;
 }
-.debug {border: 2px solid red;}
-.debug2 {border: 2px solid rgb(17, 0, 255);}
 .main-wrapper {
     height: 100vh;
     background-image: linear-gradient(var(--darkgreen) 120px, var(--graysfondo) 0%);

@@ -178,7 +178,11 @@ createApp({
         }     
     },
     methods: {
-        
+        callChat(id){
+            this.currentIndex = this.contacts.findIndex((item)=>{
+                return id === item.id
+            })
+        }
     }
 }).mount('#app')
 

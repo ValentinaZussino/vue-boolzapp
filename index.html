@@ -62,7 +62,7 @@
                 <!-- contacts list -->
                 <div class="contacts-list">
                     <!-- single contact -->
-                    <div class="single-contact" v-for="(item, index) in contacts" :key="index">
+                    <div class="single-contact" v-for="(item, index) in contacts" :key="index" @click="callChat(item.id)">
                         <!-- img contact -->
                         <div class="img-single-contact">
                             <img :src="`./img/avatar${item.avatar}.jpg`" alt="">
@@ -109,12 +109,6 @@
                         <div v-for="elem in contacts[currentIndex].messages" :class="elem.status" >
                             <p>{{elem.message}}</p>
                         </div>
-                        <!-- <div class="sent">
-                            <p>messaggio aaaaaaaaaaaa messaggio ssss</p>
-                        </div> -->
-                        <!-- <div class="received">
-                            <p>messaggio ssss messaggio aaaaaaaaaaaa bahdbsiddc egfqggr</p>
-                        </div> -->
                 </div>
 
                 <!-- input messages bar -->
