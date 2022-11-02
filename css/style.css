@@ -1,17 +1,17 @@
 :root {
     --darkgreen:rgb(2, 149, 137);
-    --lightgreen: rgb(219, 247, 195);
     --graysfondo: rgb(216, 216, 213);
     --gray: rgb(234, 234, 234);
     --darkgray: rgb(177, 177, 177);
     --beige: rgb(243, 238, 234);
+    --lightgray: rgb(243, 243, 243);
     --grayactive: rgb(235, 233, 235);
     --lightblue: rgb(142, 218, 252);
     --white: white;
+    --lightgreen: rgb(219, 247, 195);
 }
 img {
     max-width: 100%;
-    /* height: 100%; */
 }
 .debug {border: 2px solid red;}
 .debug2 {border: 2px solid rgb(17, 0, 255);}
@@ -50,18 +50,38 @@ img {
     background-color: var(--lightblue);
 }
 .search-div {
-    background-color: var(--gray);
+    background-color: var(--lightgray);
     height: 40px;
+    display: flex;
+    align-items: center;
+    padding: 7px;
+}
+.btn-search {
+    background-color: var(--white);
+    color: var(--darkgray);
+    font-size: 13px;
+    padding: 5px 15px;
+    border: none;
+    margin-right: 2px;
+}
+.search-div input {
+    width: 100%;
+    color: var(--darkgray);
+    font-size: 13px;
+    padding: 5px 15px;
+    border: none;
 }
 .contacts-list {
     height: calc(100% - 150px);
     overflow-y: auto;
+    padding-top: 8px;
 }
 .single-contact {
     height: 60px;
     display: flex;
     align-items: center;
-    padding: 3px 0px 3px 10px;
+    padding: 7px 0px 3px 10px;
+    border-top: 1px solid var(--gray);
 }
 .img-single-contact {
     width: 50px;
@@ -74,7 +94,7 @@ img {
 }
 .name-single-contact {
     flex-grow: 1;
-    padding-left: 10px;
+    padding-left: 15px;
     font-size: 14px;
     line-height: 16px;
 }
