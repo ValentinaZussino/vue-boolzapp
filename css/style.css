@@ -48,7 +48,7 @@ img {
     align-items: center;
     padding: 5px 10px;
 }
-.img-user {
+.img-user, .img-single-chat {
     width: 40px;
     height: 40px;
     border-radius: 50%;
@@ -60,10 +60,10 @@ img {
     font-weight: 600;
     flex-grow: 1;
 }
-.controls-user {
+.controls-user, .controls-single-chat {
     color: var(--darkgray);
 }
-.controls-user i {
+.controls-user i, .controls-single-chat i{
     cursor: pointer;
 }
 .notifications-control {
@@ -127,6 +127,20 @@ img {
     width: 40px;
     font-size: 12px;
     color: var(--darkgray);
+}
+.single-chat-control-bar {
+    display: flex;
+    align-items: center;
+    padding: 5px 10px;
+}
+.name-single-contact-chat {
+    flex-grow: 1;
+    padding-left: 10px;
+    line-height: 15px;
+}
+.name-single-contact-chat span:first-of-type {
+    font-size: 13px;
+    font-weight: 600;
 }
 .single-chat-content {
     height: calc(100% - 100px);
