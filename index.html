@@ -88,11 +88,11 @@
                 <div class="top-gray-bars single-chat-control-bar">
                     <!-- img contact single chat -->
                     <div class="img-single-chat">
-                        <img src="./img/avatar_1.jpg" alt="">
+                        <img :src="`./img/avatar${contacts[currentIndex].avatar}.jpg`" alt="">
                     </div>
                     <!-- name contact single chat -->
                     <div class="name-single-contact-chat">
-                        <span class="d-block">Michele</span>
+                        <span class="d-block">{{contacts[currentIndex].name}}</span>
                         <span class="d-block last-msg">Ultimo accesso oggi alle 12:00</span>
                     </div>
                     <!-- controls single chat -->

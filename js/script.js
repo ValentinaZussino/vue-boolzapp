@@ -179,9 +179,8 @@ createApp({
     },
     methods: {
         callChat(id){
-            this.currentIndex = this.contacts.findIndex((item)=>{
-                return id === item.id
-            })
+            this.currentIndex = this.contacts.findIndex((item)=> id === item.id )
+            console.log(id)
         }
     }
 }).mount('#app')
