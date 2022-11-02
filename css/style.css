@@ -69,6 +69,28 @@ img {
 .notifications-control {
     height: 60px;
     background-color: var(--lightblue);
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+}
+.bell-notification {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+    background-color: var(--white);
+    color: var(--lightblue);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 17px;
+}
+.notifications a {
+    color: rgb(90, 90, 90);
+}
+#attiva-notifiche {
+    font-size: 11px;
+    margin-top: 3px;
 }
 .search-div {
     background-color: var(--lightgray);
@@ -133,12 +155,12 @@ img {
     align-items: center;
     padding: 5px 10px;
 }
-.name-single-contact-chat {
+.name-single-contact-chat, .notifications {
     flex-grow: 1;
     padding-left: 10px;
     line-height: 15px;
 }
-.name-single-contact-chat span:first-of-type {
+.name-single-contact-chat span:first-of-type, .notifications span:first-of-type {
     font-size: 13px;
     font-weight: 600;
 }
