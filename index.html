@@ -11,13 +11,13 @@
     <title>Boolzapp</title>
 </head>
 <body>
-    <!-- mai wrapper -->
+    <!-- MAIN WRAPPER -->
     <div id="app" class="main-wrapper">
 
-        <!-- container centrale -->
+        <!-- CENTRAL CONTAINER -->
         <div class="central-container">
 
-            <!-- left column -->
+            <!-- LEFT column -->
             <div class="left-column">
 
                 <!-- div user -->
@@ -30,49 +30,49 @@
                     <div class="user-name">
                         <span>Sofia</span>
                     </div>
-                    <!-- controlli user -->
+                    <!-- user controls -->
                     <div class="controls-user">
-                        <i class="fa-solid fa-circle-notch pe-2"></i>
-                        <i class="fa-solid fa-message pe-2"></i>
-                        <i class="fa-solid fa-ellipsis-vertical pe-2"></i>
+                        <i class="fa-solid fa-circle-notch pe-3"></i>
+                        <i class="fa-solid fa-message pe-3"></i>
+                        <i class="fa-solid fa-ellipsis-vertical pe-3"></i>
                     </div>
                 </div>
 
-                <!-- div ricevi notitifche msg -->
+                <!-- div notifications -->
                 <div class="notifications-control">
-                    <!-- div bell -->
+                    <!-- bell -->
                     <div class="bell-notification">
                         <i class="fa-solid fa-bell-slash"></i>
                     </div>
-                    <!-- ricevi notifiche -->
+                    <!-- notifications choice -->
                     <div class="notifications">
                         <span class="d-block">Ricevi notifiche di nuovi messaggi</span>
                         <a href=""><span id="attiva-notifiche" class="d-block">Attiva notifiche desktop</span></a>
                     </div>
                 </div>
 
-                <!-- div ricerca -->
+                <!-- div search -->
                 <div class="search-div">
-                    <!-- icona cerca -->
+                    <!-- search icon -->
                     <button class="btn-search"><i class="fa-sharp fa-solid fa-magnifying-glass"></i></button>
-                    <!-- input cerca -->
+                    <!-- search input -->
                     <input class="" type="text" placeholder="Cerca o inizia una nuova chat">
                 </div>
 
-                <!-- div per elenco contatti -->
+                <!-- contacts list -->
                 <div class="contacts-list">
-                    <!-- singolo contatto -->
+                    <!-- single contact -->
                     <div class="single-contact" v-for="(item, index) in contacts" :key="index">
-                        <!-- img contatto -->
+                        <!-- img contact -->
                         <div class="img-single-contact">
                             <img :src="`./img/avatar${item.avatar}.jpg`" alt="">
                         </div>
-                        <!-- nome contatto -->
+                        <!-- name contact -->
                         <div class="name-single-contact">
                             <span class="fw-bold d-block">{{item.name}}</span>
                             <span class="d-block last-msg">Ultimo messaggio inviato</span>
                         </div>
-                        <!-- orario -->
+                        <!-- time -->
                         <div class="time-single-contact">
                             <span>12:00</span>
                         </div>
@@ -81,29 +81,29 @@
 
             </div>
 
-            <!-- right column -->
+            <!-- RIGHT column -->
             <div class="right-column">
 
-                <!-- single chat controls -->
+                <!-- single chat controls bar -->
                 <div class="top-gray-bars single-chat-control-bar">
-                    <!-- img contatto single chat -->
+                    <!-- img contact single chat -->
                     <div class="img-single-chat">
                         <img src="./img/avatar_1.jpg" alt="">
                     </div>
-                    <!-- nome contatto single chat -->
+                    <!-- name contact single chat -->
                     <div class="name-single-contact-chat">
                         <span class="d-block">Michele</span>
                         <span class="d-block last-msg">Ultimo accesso oggi alle 12:00</span>
                     </div>
-                    <!-- controlli single chat -->
+                    <!-- controls single chat -->
                     <div class="controls-single-chat">
-                        <i class="fa-sharp fa-solid fa-magnifying-glass pe-2"></i>
-                        <i class="fa-solid fa-paperclip pe-2"></i>
-                        <i class="fa-solid fa-ellipsis-vertical pe-2"></i>
+                        <i class="fa-sharp fa-solid fa-magnifying-glass pe-3"></i>
+                        <i class="fa-solid fa-paperclip pe-3"></i>
+                        <i class="fa-solid fa-ellipsis-vertical pe-3"></i>
                     </div>
                 </div>
 
-                <!-- div contenuto chat -->
+                <!-- single chat content -->
                 <div class="single-chat-content">
                         <!-- msgs -->
                         <div v-for="elem in contacts[currentIndex].messages" :class="elem.status" >
@@ -117,7 +117,7 @@
                         </div> -->
                 </div>
 
-                <!-- div con input msg -->
+                <!-- input messages bar -->
                 <div class="bottom-beige-bar">
                     <!-- emoticons -->
                     <div class="emoticons">
