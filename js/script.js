@@ -6,6 +6,7 @@ createApp({
             currentIndex: 0,
             newMessage: '',
             searchContact: '',
+            // messageIndex: 0,
             contacts: [
                 {
                     name: 'Michele',
@@ -222,6 +223,9 @@ createApp({
                 return message.status === 'received';
             })
             return msg[msg.length -1];
+        },
+        deleteMessage(i){
+            this.contacts[this.currentIndex].messages.splice(i, 1);
         }
     }
 }).mount('#app')

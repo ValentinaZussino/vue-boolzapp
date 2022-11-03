@@ -195,7 +195,8 @@ img {
     width: 80%;
 }
 .single-chat-content div::after{
-    content: '12:00';
+    content: '12:00 \f560';
+    font: var(--fa-font-solid); 
     position: absolute;
     right: 3px;
     bottom: 3px;

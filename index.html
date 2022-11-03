@@ -93,7 +93,6 @@
                     <!-- name contact single chat -->
                     <div class="name-single-contact-chat">
                         <span class="d-block">{{contacts[currentIndex].name}}</span>
-                        <!-- <span class="d-block last-msg" v-if="autoReply()">Sta scrivendo</span> -->
                         <span class="d-block last-msg">Ultimo accesso {{getLastMessage(contacts[currentIndex]).date}}</span>
                     </div>
                     <!-- controls single chat -->
@@ -107,7 +106,7 @@
                 <!-- single chat content -->
                 <div class="single-chat-content">
                         <!-- msgs -->
-                        <div v-for="elem in contacts[currentIndex].messages" :class="elem.status" >
+                        <div v-for="(elem, index) in contacts[currentIndex].messages" :class="elem.status" @click="deleteMessage(index)">
                             <p>{{elem.message}}</p>
                         </div>
                 </div>
