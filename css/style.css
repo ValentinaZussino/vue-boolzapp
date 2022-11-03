@@ -5,7 +5,7 @@
     --midgray: rgb(177, 177, 177);
     --beige: rgb(243, 238, 234);
     --lightgray: rgb(243, 243, 243);
-    --grayactive: rgb(235, 233, 235);
+    --grayactive: rgb(224, 224, 224);
     --lightblue: rgb(142, 218, 252);
     --white: white;
     --lightgreen: rgb(219, 247, 195);
@@ -142,7 +142,7 @@ img {
     height: 100%;
 }
 .name-single-contact {
-    flex-grow: 1;
+    width: calc(100% - 90px);
     padding-left: 15px;
     font-size: 14px;
     line-height: 16px;

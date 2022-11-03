@@ -4,6 +4,7 @@ createApp({
     data(){
         return{
             currentIndex: 0,
+            newMessage: '',
             contacts: [
                 {
                     name: 'Michele',
@@ -181,6 +182,31 @@ createApp({
         callChat(id){
             this.currentIndex = this.contacts.findIndex((item)=> id === item.id )
             console.log(id)
+        },
+        sendMessage(){
+            if(!this.newMessage) return;
+            const d = new Date();
+            let newDate = d.toDateString();
+            const newSentMessage = {
+                date: newDate,
+                message: this.newMessage,
+                status: 'sent'
+            }
+            this.contacts[this.currentIndex].messages.push(newSentMessage);
+            this.newMessage = '';
+            this.autoReply();
+        },
+        autoReply(){
+            setTimeout(()=>{
+                const d = new Date();
+            let newDate = d.toDateString();
+            const newSentMessage = {
+                date: newDate,
+                message: 'Ok',
+                status: 'received'
+            }
+            this.contacts[this.currentIndex].messages.push(newSentMessage);
+            }, 1000)
         }
     }
 }).mount('#app')
