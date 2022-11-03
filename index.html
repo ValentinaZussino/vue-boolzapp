@@ -56,13 +56,13 @@
                     <!-- search icon -->
                     <button class="btn-search"><i class="fa-sharp fa-solid fa-magnifying-glass"></i></button>
                     <!-- search input -->
-                    <input class="" type="text" placeholder="Cerca o inizia una nuova chat">
+                    <input class="" type="text" placeholder="Cerca o inizia una nuova chat" v-model.trim="searchContact">
                 </div>
 
                 <!-- contacts list -->
                 <div class="contacts-list">
                     <!-- single contact -->
-                    <div class="single-contact" v-for="(item, index) in contacts" :key="item.id" :class="{'single-contact-active': index === currentIndex}" @click="callChat(item.id)">
+                    <div class="single-contact" v-for="(item, index) in filteredContacts" :key="item.id" :class="{'single-contact-active': index === currentIndex}" @click="callChat(item.id)">
                         <!-- img contact -->
                         <div class="img-single-contact">
                             <img :src="`./img/avatar${item.avatar}.jpg`" alt="">

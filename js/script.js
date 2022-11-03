@@ -5,6 +5,7 @@ createApp({
         return{
             currentIndex: 0,
             newMessage: '',
+            searchContact: '',
             contacts: [
                 {
                     name: 'Michele',
@@ -177,6 +178,15 @@ createApp({
                 }
             ]
         }     
+    },
+    computed: {
+        filteredContacts(){
+            return this.contacts.filter((item)=>{
+                const name = item.name.toLowerCase();
+                console.log(name);
+                return name.includes(this.searchContact.toLowerCase());
+            })
+        }
     },
     methods: {
         callChat(id){
