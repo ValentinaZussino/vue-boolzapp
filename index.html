@@ -120,7 +120,8 @@
                     <!-- input msg -->
                     <input type="text" placeholder="Scrivi un messaggio" class="input-message" v-model.trim="newMessage" @keyup.enter="sendMessage">
                     <!-- mic -->
-                    <div class="mic">
+                    <div class="plane-mic">
+                        <i class="fas fa-paper-plane pe-2" v-show="newMessage != ''" @click="sendMessage"></i>
                         <i class="fa-solid fa-microphone"></i>
                     </div>
                 </div>

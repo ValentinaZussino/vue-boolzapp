@@ -214,7 +214,7 @@ img {
     display: flex;
     align-items: center;
 }
-.emoticons, .mic {
+.emoticons, .plane-mic {
     width: 65px;
     text-align: center;
     line-height: 50px;
