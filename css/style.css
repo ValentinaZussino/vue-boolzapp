@@ -142,7 +142,7 @@ img {
     height: 100%;
 }
 .name-single-contact {
-    width: calc(100% - 90px);
+    width: calc(100% - 100px);
     padding-left: 15px;
     font-size: 14px;
     line-height: 16px;
@@ -152,9 +152,10 @@ img {
     color: var(--midgray);
 }
 .time-single-contact {
-    width: 40px;
-    font-size: 12px;
+    width: 50px;
+    font-size: 9px;
     color: var(--midgray);
+    padding-right: 2px;
 }
 .single-chat-control-bar {
     display: flex;

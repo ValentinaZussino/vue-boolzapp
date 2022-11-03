@@ -183,7 +183,6 @@ createApp({
         filteredContacts(){
             return this.contacts.filter((item)=>{
                 const name = item.name.toLowerCase();
-                console.log(name);
                 return name.includes(this.searchContact.toLowerCase());
             })
         }
@@ -217,6 +216,12 @@ createApp({
             }
             this.contacts[this.currentIndex].messages.push(newSentMessage);
             }, 1000)
+        },
+        getLastMessage(item){
+            const msg = item.messages.filter((message)=>{
+                return message.status === 'received';
+            })
+            return msg[msg.length -1];
         }
     }
 }).mount('#app')

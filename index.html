@@ -70,11 +70,11 @@
                         <!-- name contact -->
                         <div class="name-single-contact">
                             <span class="fw-bold d-block">{{item.name}}</span>
-                            <span class="d-block last-msg">{{item.messages[item.messages.length -1].message}}</span>
+                            <span class="d-block last-msg">{{getLastMessage(item).message}}</span>
                         </div>
                         <!-- time -->
                         <div class="time-single-contact">
-                            <span>12:00</span>
+                            <span>{{getLastMessage(item).date}}</span>
                         </div>
                     </div>
                 </div>
@@ -93,7 +93,7 @@
                     <!-- name contact single chat -->
                     <div class="name-single-contact-chat">
                         <span class="d-block">{{contacts[currentIndex].name}}</span>
-                        <span class="d-block last-msg">Ultimo accesso {{contacts[currentIndex].messages[contacts[currentIndex].messages.length -1].date}}</span>
+                        <span class="d-block last-msg">Ultimo accesso {{getLastMessage(contacts[currentIndex]).date}}</span>
                     </div>
                     <!-- controls single chat -->
                     <div class="controls-single-chat">
