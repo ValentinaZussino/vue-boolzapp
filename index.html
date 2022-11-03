@@ -106,9 +106,12 @@
                 <!-- single chat content -->
                 <div class="single-chat-content">
                         <!-- msgs -->
-                        <div v-for="(elem, index) in contacts[currentIndex].messages" :class="elem.status" @click="deleteMessage(index)">
+                        <div v-for="(elem, index) in contacts[currentIndex].messages" :class="elem.status">
                             <p>{{elem.message}}</p>
                             <i class="fa-solid fa-chevron-down"></i>
+                            <div class="delete-msg">
+                                <span @click="deleteMessage(index)">Cancella messaggio</span>
+                            </div>
                         </div>
                 </div>
 
