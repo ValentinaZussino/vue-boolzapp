@@ -143,13 +143,17 @@ img {
 }
 .name-single-contact {
     width: calc(100% - 100px);
-    padding-left: 15px;
+    padding-left: 13px;
+    padding-right: 2px;
     font-size: 14px;
     line-height: 16px;
 }
 .last-msg {
     font-size: 12px; 
     color: var(--midgray);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 .time-single-contact {
     width: 50px;
@@ -215,11 +219,18 @@ img {
     align-items: center;
 }
 .emoticons, .plane-mic {
-    width: 65px;
+    width: 70px;
     text-align: center;
     line-height: 50px;
     cursor: pointer;
     color: var(--darkgray);
+}
+.emoticons i:hover {
+    background-color: yellow;
+    border-radius: 50%;
+}
+.plane-mic i:hover {
+    color: var(--lightblue);
 }
 .input-message {
     flex-grow: 1;
