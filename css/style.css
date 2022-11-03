@@ -194,6 +194,11 @@ img {
     margin: 0;
     width: 80%;
 }
+.single-chat-content div i {
+    position: absolute;
+    top: 3px;
+    right: 6px;
+}
 .single-chat-content div::after{
     content: '12:00 \f560';
     font: var(--fa-font-solid); 

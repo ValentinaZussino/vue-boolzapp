@@ -108,6 +108,7 @@
                         <!-- msgs -->
                         <div v-for="(elem, index) in contacts[currentIndex].messages" :class="elem.status" @click="deleteMessage(index)">
                             <p>{{elem.message}}</p>
+                            <i class="fa-solid fa-chevron-down"></i>
                         </div>
                 </div>
 
