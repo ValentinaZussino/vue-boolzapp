@@ -6,12 +6,15 @@ createApp({
             currentIndex: 0,
             newMessage: '',
             searchContact: '',
-            // messageIndex: 0,
+            msgDelete: {
+                index: null,
+                show: false,
+            },
             contacts: [
                 {
                     name: 'Michele',
                     avatar: '_1',
-                    id: 1,
+                    id: 0,
                     visible: true,
                     messages: [
                         {
@@ -34,7 +37,7 @@ createApp({
                 {
                     name: 'Fabio',
                     avatar: '_2',
-                    id: 2,
+                    id: 1,
                     visible: true,
                     messages: [
                         {
@@ -57,7 +60,7 @@ createApp({
                 {
                     name: 'Samuele',
                     avatar: '_3',
-                    id: 3,
+                    id: 2,
                     visible: true,
                     messages: [
                         {
@@ -80,7 +83,7 @@ createApp({
                 {
                     name: 'Alessandro B.',
                     avatar: '_4',
-                    id: 4,
+                    id: 3,
                     visible: true,
                     messages: [
                         {
@@ -98,7 +101,7 @@ createApp({
                 {
                     name: 'Alessandro L.',
                     avatar: '_5',
-                    id: 5,
+                    id: 4,
                     visible: true,
                     messages: [
                         {
@@ -116,7 +119,7 @@ createApp({
                 {
                     name: 'Claudia',
                     avatar: '_6',
-                    id: 6,
+                    id: 5,
                     visible: true,
                     messages: [
                         {
@@ -139,7 +142,7 @@ createApp({
                 {
                     name: 'Federico',
                     avatar: '_7',
-                    id: 7,
+                    id: 6,
                     visible: true,
                     messages: [
                         {
@@ -157,7 +160,7 @@ createApp({
                 {
                     name: 'Davide',
                     avatar: '_8',
-                    id: 8,
+                    id: 7,
                     visible: true,
                     messages: [
                         {
@@ -229,6 +232,16 @@ createApp({
         },
         deleteMessage(i){
             this.contacts[this.currentIndex].messages.splice(i, 1);
+            this.msgDelete.show = false;
+        },
+        showOption(i){
+            if(i === this.msgDelete.index && this.msgDelete.show){
+                this.msgDelete.index = null;
+                this.msgDelete.show = false;
+            } else {
+                this.msgDelete.index = i;
+                this.msgDelete.show = true;
+            }
         }
     }
 }).mount('#app')

@@ -62,7 +62,7 @@
                 <!-- contacts list -->
                 <div class="contacts-list">
                     <!-- single contact -->
-                    <div class="single-contact" v-for="(item, index) in filteredContacts" :key="item.id" :class="{'single-contact-active': index === currentIndex}" @click="callChat(item.id)">
+                    <div class="single-contact" v-for="(item, index) in filteredContacts" :key="item.id" :class="{'single-contact-active': item.id === currentIndex}" @click="callChat(item.id)">
                         <!-- img contact -->
                         <div class="img-single-contact">
                             <img :src="`./img/avatar${item.avatar}.jpg`" alt="">
@@ -108,8 +108,8 @@
                         <!-- msgs -->
                         <div v-for="(elem, index) in contacts[currentIndex].messages" :class="elem.status">
                             <p>{{elem.message}}</p>
-                            <i class="fa-solid fa-chevron-down"></i>
-                            <div class="delete-msg">
+                            <i class="fa-solid fa-chevron-down" @click="showOption(index)"></i>
+                            <div class="delete-msg" v-if="msgDelete.index === index && msgDelete.show">
                                 <span @click="deleteMessage(index)">Cancella messaggio</span>
                             </div>
                         </div>

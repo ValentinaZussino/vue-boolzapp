@@ -144,7 +144,7 @@ img {
 .name-single-contact {
     width: calc(100% - 100px);
     padding-left: 13px;
-    padding-right: 2px;
+    padding-right: 10px;
     font-size: 14px;
     line-height: 16px;
 }
@@ -180,12 +180,12 @@ img {
     overflow-y: auto;
     display: flex;
     flex-direction: column;
-    padding: 5px 60px;
+    padding: 15px 60px;
 }
 .single-chat-content > div {
     width: 40%;
     max-width: 50%;
-    margin-bottom: 8px;
+    margin-bottom: 15px;
     padding: 10px 10px 12px 10px;
     font-size: 13px;
     position: relative;
