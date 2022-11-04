@@ -222,6 +222,9 @@ createApp({
             const msg = item.messages.filter((message)=>{
                 return message.status === 'received';
             })
+            if(msg.length < 1){
+                return ''
+            }
             return msg[msg.length -1];
         },
         deleteMessage(i){
