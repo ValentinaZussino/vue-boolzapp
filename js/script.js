@@ -182,6 +182,21 @@ createApp({
                     ],
                 }
             ],
+            answers: [
+                'Sì',
+                'No',
+                'Forse',
+                'Domani',
+                'Certamente',
+                'Santocielo',
+                'Anche no',
+                'Bella giornata',
+                'Perchè?',
+                'Santa pazienza',
+                'Ho fame',
+                'Bene grazie, tu?',
+                'Organizziamo il weekend'
+            ],
             icons:[
                 '&#128512;',
                 '&#128513;',
@@ -274,18 +289,20 @@ createApp({
         },
         autoReply(){
             setTimeout(()=>{
+                let randomAnswerIndex = randomNumber(0, this.answers.length -1);
+                let randomAnswer = this.answers[randomAnswerIndex];
                 const d = new Date();
-            let newDate = d.toDateString();
-            const newSentMessage = {
-                date: newDate,
-                message: 'Ok',
-                status: 'received'
-            }
-            this.contacts[this.currentIndex].messages.push(newSentMessage);
-            this.$nextTick(()=> {
-                const el =  this.$refs.msg[this.$refs.msg.length - 1 ];
-                el.scrollIntoView({behavior: "smooth", block: "end", inline: "nearest"});
-            })
+                let newDate = d.toDateString();
+                const newSentMessage = {
+                    date: newDate,
+                    message: randomAnswer,
+                    status: 'received'
+                }
+                this.contacts[this.currentIndex].messages.push(newSentMessage);
+                this.$nextTick(()=> {
+                    const el =  this.$refs.msg[this.$refs.msg.length - 1 ];
+                    el.scrollIntoView({behavior: "smooth", block: "end", inline: "nearest"});
+                })
             }, 1000)
         },
         getLastMessage(item){
@@ -319,3 +336,7 @@ createApp({
     }
 }).mount('#app')
 
+// ---libreria
+function randomNumber(min, max){
+    return Math.floor(Math.random() * (max - min + 1) + min);
+}
