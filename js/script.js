@@ -208,6 +208,10 @@ createApp({
             this.contacts[this.currentIndex].messages.push(newSentMessage);
             this.newMessage = '';
             this.autoReply();
+            this.$nextTick(()=> {
+                const el =  this.$refs.msg[this.$refs.msg.length - 1 ];
+                el.scrollIntoView({behavior: "smooth", block: "end", inline: "nearest"});
+            })
         },
         autoReply(){
             setTimeout(()=>{
@@ -219,6 +223,10 @@ createApp({
                 status: 'received'
             }
             this.contacts[this.currentIndex].messages.push(newSentMessage);
+            this.$nextTick(()=> {
+                const el =  this.$refs.msg[this.$refs.msg.length - 1 ];
+                el.scrollIntoView({behavior: "smooth", block: "end", inline: "nearest"});
+            })
             }, 1000)
         },
         getLastMessage(item){

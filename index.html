@@ -106,7 +106,7 @@
                 <!-- single chat content -->
                 <div class="single-chat-content">
                         <!-- msgs -->
-                        <div v-for="(elem, index) in contacts[currentIndex].messages" :class="elem.status">
+                        <div v-for="(elem, index) in contacts[currentIndex].messages" :key="index" :class="elem.status" ref="msg">
                             <p>{{elem.message}}</p>
                             <i class="fa-solid fa-chevron-down" @click="showOption(index)"></i>
                             <div class="delete-msg" v-if="msgDelete.index === index && msgDelete.show">
