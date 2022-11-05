@@ -246,6 +246,17 @@ img {
     line-height: 50px;
     cursor: pointer;
     color: var(--darkgray);
+    position: relative;
+}
+#emoji {
+    position: absolute;
+    left: 0;
+    top: -150px;
+    width: 330px;
+    height: 150px;
+    padding: 3px;
+    background-color: var(--beige);
+    overflow-y: auto;
 }
 .emoticons i:hover {
     background-color: yellow;

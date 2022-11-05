@@ -119,7 +119,10 @@
                 <div class="bottom-beige-bar">
                     <!-- emoticons -->
                     <div class="emoticons">
-                        <i class="fa-regular fa-face-smile"></i>
+                        <div id="emoji" v-show="showEmoji">
+                            <span v-for="(icon, index) in icons" :key="index" v-html="icon" @click="addEmoji(index)"></span>
+                        </div>
+                        <i class="fa-regular fa-face-smile" @click="showEmoticons"></i>
                     </div>
                     <!-- input msg -->
                     <input type="text" placeholder="Scrivi un messaggio" class="input-message" v-model.trim="newMessage" @keyup.enter="sendMessage">
