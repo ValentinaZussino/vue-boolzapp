@@ -93,7 +93,8 @@
                     <!-- name contact single chat -->
                     <div class="name-single-contact-chat">
                         <span class="d-block">{{contacts[currentIndex].name}}</span>
-                        <span class="d-block last-msg">Ultimo accesso {{getLastMessage(contacts[currentIndex]).date}}</span>
+                        <span class="d-block last-msg" v-if="typing">Sta scrivendo...</span>
+                        <span class="d-block last-msg" v-else>Ultimo accesso {{getLastMessage(contacts[currentIndex]).date}}</span>
                     </div>
                     <!-- controls single chat -->
                     <div class="controls-single-chat">

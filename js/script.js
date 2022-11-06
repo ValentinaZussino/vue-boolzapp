@@ -7,6 +7,7 @@ createApp({
             newMessage: '',
             searchContact: '',
             showChat: false,
+            typing: false,
             showEmoji: false,
             msgDelete: {
                 index: null,
@@ -286,6 +287,7 @@ createApp({
             this.contacts[this.currentIndex].messages.push(newSentMessage);
             this.newMessage = '';
             this.autoReply();
+            this.typing = true;
             this.$nextTick(()=> {
                 const el =  this.$refs.msg[this.$refs.msg.length - 1 ];
                 el.scrollIntoView({behavior: "smooth", block: "end", inline: "nearest"});
@@ -307,7 +309,8 @@ createApp({
                     const el =  this.$refs.msg[this.$refs.msg.length - 1 ];
                     el.scrollIntoView({behavior: "smooth", block: "end", inline: "nearest"});
                 })
-            }, 1000)
+                this.typing = false;
+            }, 1500)
         },
         getLastMessage(item){
             const msg = item.messages.filter((message)=>{
