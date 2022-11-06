@@ -6,6 +6,7 @@ createApp({
             currentIndex: 0,
             newMessage: '',
             searchContact: '',
+            showChat: false,
             showEmoji: false,
             msgDelete: {
                 index: null,
@@ -267,8 +268,11 @@ createApp({
     },
     methods: {
         callChat(id){
-            this.currentIndex = this.contacts.findIndex((item)=> id === item.id )
-            console.log(id)
+            this.currentIndex = this.contacts.findIndex((item)=> id === item.id );
+            this.backToContacts();
+        },
+        backToContacts(){
+            this.showChat = !this.showChat;
         },
         sendMessage(){
             if(!this.newMessage) return;

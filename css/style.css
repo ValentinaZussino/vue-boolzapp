@@ -65,6 +65,11 @@ img {
 .controls-user i, .controls-single-chat i{
     cursor: pointer;
 }
+.controls-single-chat .fa-circle-chevron-left {
+    color: var(--darkgreen);
+    font-size: 18px;
+    visibility: hidden;
+}
 .notifications-control {
     height: 60px;
     background-color: var(--lightblue);
@@ -271,4 +276,16 @@ img {
     border: none;
     padding-left: 10px;
     font-size: 13px;
+}
+/* RESPONSIVE */
+@media screen and (max-width: 768px){
+    .left-column, .right-column {
+        width: 100%!important;
+    }
+    .dnone-col {
+        display: none;
+    }
+    .controls-single-chat .fa-circle-chevron-left {
+        visibility: visible;
+    }
 }

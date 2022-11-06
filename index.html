@@ -18,7 +18,7 @@
         <div class="central-container">
 
             <!-- LEFT column -->
-            <div class="left-column">
+            <div class="left-column" :class="{'dnone-col' : showChat}">
 
                 <!-- div user -->
                 <div class="top-gray-bars user-control-bar">
@@ -82,7 +82,7 @@
             </div>
 
             <!-- RIGHT column -->
-            <div class="right-column">
+            <div class="right-column" :class="{'dnone-col' : !showChat}">
 
                 <!-- single chat controls bar -->
                 <div class="top-gray-bars single-chat-control-bar">
@@ -97,6 +97,7 @@
                     </div>
                     <!-- controls single chat -->
                     <div class="controls-single-chat">
+                        <i class="fa-solid fa-circle-chevron-left pe-3" @click="backToContacts"></i>
                         <i class="fa-sharp fa-solid fa-magnifying-glass pe-3"></i>
                         <i class="fa-solid fa-paperclip pe-3"></i>
                         <i class="fa-solid fa-ellipsis-vertical pe-3"></i>
