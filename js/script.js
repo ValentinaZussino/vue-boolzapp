@@ -18,7 +18,7 @@ createApp({
                 {
                     name: 'Michele',
                     avatar: '_1',
-                    id: 0,
+                    id: 1,
                     visible: true,
                     messages: [
                         {
@@ -41,7 +41,7 @@ createApp({
                 {
                     name: 'Fabio',
                     avatar: '_2',
-                    id: 1,
+                    id: 2,
                     visible: true,
                     messages: [
                         {
@@ -64,7 +64,7 @@ createApp({
                 {
                     name: 'Samuele',
                     avatar: '_3',
-                    id: 2,
+                    id: 3,
                     visible: true,
                     messages: [
                         {
@@ -87,7 +87,7 @@ createApp({
                 {
                     name: 'Alessandro B.',
                     avatar: '_4',
-                    id: 3,
+                    id: 4,
                     visible: true,
                     messages: [
                         {
@@ -105,7 +105,7 @@ createApp({
                 {
                     name: 'Alessandro L.',
                     avatar: '_5',
-                    id: 4,
+                    id: 5,
                     visible: true,
                     messages: [
                         {
@@ -123,7 +123,7 @@ createApp({
                 {
                     name: 'Claudia',
                     avatar: '_6',
-                    id: 5,
+                    id: 6,
                     visible: true,
                     messages: [
                         {
@@ -146,7 +146,7 @@ createApp({
                 {
                     name: 'Federico',
                     avatar: '_7',
-                    id: 6,
+                    id: 7,
                     visible: true,
                     messages: [
                         {
@@ -164,7 +164,7 @@ createApp({
                 {
                     name: 'Davide',
                     avatar: '_8',
-                    id: 7,
+                    id: 8,
                     visible: true,
                     messages: [
                         {

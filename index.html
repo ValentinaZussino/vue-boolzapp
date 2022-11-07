@@ -62,7 +62,7 @@
                     <!-- contacts list -->
                     <div class="contacts-list" :class="{'dark-side' : dark}">
                         <!-- single contact -->
-                        <div class="single-contact" v-for="(item, index) in filteredContacts" :key="item.id" :class="{'single-contact-active': item.id === currentIndex}" @click="callChat(item.id)">
+                        <div class="single-contact" v-for="(item, index) in filteredContacts" :key="item.id" :class="{'single-contact-active': item.id === contacts[currentIndex].id}" @click="callChat(item.id)">
                             <!-- img contact -->
                             <div class="img-single-contact">
                                 <img :src="`./img/avatar${item.avatar}.jpg`" alt="">
