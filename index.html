@@ -12,131 +12,131 @@
 </head>
 <body>
     <!-- MAIN WRAPPER -->
-    <div id="app" class="main-wrapper"  :class="{'dark-bground' : dark}">
+    <div id="app">
+        <div class="main-wrapper"  :class="{'dark-bground' : dark}">
+            <!-- CENTRAL CONTAINER -->
+            <div class="central-container">
 
-        <!-- CENTRAL CONTAINER -->
-        <div class="central-container">
+                <!-- LEFT column -->
+                <div class="left-column" :class="{'dnone-col' : showChat}">
 
-            <!-- LEFT column -->
-            <div class="left-column" :class="{'dnone-col' : showChat}">
-
-                <!-- div user -->
-                <div class="top-gray-bars user-control-bar"  :class="{'dark-bars' : dark}">
-                    <!-- img user -->
-                    <div class="img-user">
-                        <img src="./img/avatar_io.jpg" alt="">
-                    </div>
-                    <!-- user name -->
-                    <div class="user-name">
-                        <span>Sofia</span>
-                    </div>
-                    <!-- user controls -->
-                    <div class="controls-user">
-                        <i class="fa-solid fa-circle-notch pe-3" @click="darkMode"></i>
-                        <i class="fa-solid fa-message pe-3"></i>
-                        <i class="fa-solid fa-ellipsis-vertical pe-3"></i>
-                    </div>
-                </div>
-
-                <!-- div notifications -->
-                <div class="notifications-control">
-                    <!-- bell -->
-                    <div class="bell-notification">
-                        <i class="fa-solid fa-bell-slash"></i>
-                    </div>
-                    <!-- notifications choice -->
-                    <div class="notifications">
-                        <span class="d-block">Ricevi notifiche di nuovi messaggi</span>
-                        <a href=""><span id="attiva-notifiche" class="d-block">Attiva notifiche desktop</span></a>
-                    </div>
-                </div>
-
-                <!-- div search -->
-                <div class="search-div">
-                    <!-- search icon -->
-                    <button class="btn-search"><i class="fa-sharp fa-solid fa-magnifying-glass"></i></button>
-                    <!-- search input -->
-                    <input class="" type="text" placeholder="Cerca o inizia una nuova chat" v-model.trim="searchContact">
-                </div>
-
-                <!-- contacts list -->
-                <div class="contacts-list" :class="{'dark-side' : dark}">
-                    <!-- single contact -->
-                    <div class="single-contact" v-for="(item, index) in filteredContacts" :key="item.id" :class="{'single-contact-active': item.id === currentIndex}" @click="callChat(item.id)">
-                        <!-- img contact -->
-                        <div class="img-single-contact">
-                            <img :src="`./img/avatar${item.avatar}.jpg`" alt="">
+                    <!-- div user -->
+                    <div class="top-gray-bars user-control-bar"  :class="{'dark-bars' : dark}">
+                        <!-- img user -->
+                        <div class="img-user">
+                            <img src="./img/avatar_io.jpg" alt="">
                         </div>
-                        <!-- name contact -->
-                        <div class="name-single-contact">
-                            <span class="fw-bold d-block">{{item.name}}</span>
-                            <span class="d-block last-msg">{{getLastMessage(item).message}}</span>
+                        <!-- user name -->
+                        <div class="user-name">
+                            <span>Sofia</span>
                         </div>
-                        <!-- time -->
-                        <div class="time-single-contact">
-                            <span>{{getLastMessage(item).date}}</span>
+                        <!-- user controls -->
+                        <div class="controls-user">
+                            <i class="fa-solid fa-circle-notch pe-3" @click="darkMode"></i>
+                            <i class="fa-solid fa-message pe-3"></i>
+                            <i class="fa-solid fa-ellipsis-vertical pe-3"></i>
                         </div>
                     </div>
-                </div>
 
-            </div>
-
-            <!-- RIGHT column -->
-            <div class="right-column" :class="{'dnone-col' : !showChat}">
-
-                <!-- single chat controls bar -->
-                <div class="top-gray-bars single-chat-control-bar"  :class="{'dark-bars' : dark}">
-                    <!-- img contact single chat -->
-                    <div class="img-single-chat">
-                        <img :src="`./img/avatar${contacts[currentIndex].avatar}.jpg`" alt="">
+                    <!-- div notifications -->
+                    <div class="notifications-control">
+                        <!-- bell -->
+                        <div class="bell-notification">
+                            <i class="fa-solid fa-bell-slash"></i>
+                        </div>
+                        <!-- notifications choice -->
+                        <div class="notifications">
+                            <span class="d-block">Ricevi notifiche di nuovi messaggi</span>
+                            <a href=""><span id="attiva-notifiche" class="d-block">Attiva notifiche desktop</span></a>
+                        </div>
                     </div>
-                    <!-- name contact single chat -->
-                    <div class="name-single-contact-chat">
-                        <span class="d-block">{{contacts[currentIndex].name}}</span>
-                        <span class="d-block last-msg" v-if="typing">Sta scrivendo...</span>
-                        <span class="d-block last-msg" v-else>Ultimo accesso {{getLastMessage(contacts[currentIndex]).date}}</span>
-                    </div>
-                    <!-- controls single chat -->
-                    <div class="controls-single-chat">
-                        <i class="fa-solid fa-circle-chevron-left pe-3" @click="backToContacts"></i>
-                        <i class="fa-sharp fa-solid fa-magnifying-glass pe-3"></i>
-                        <i class="fa-solid fa-paperclip pe-3"></i>
-                        <i class="fa-solid fa-ellipsis-vertical pe-3"></i>
-                    </div>
-                </div>
 
-                <!-- single chat content -->
-                <div class="single-chat-content">
-                        <!-- msgs -->
-                        <div v-for="(elem, index) in contacts[currentIndex].messages" :key="index" :class="elem.status" ref="msg">
-                            <p>{{elem.message}}</p>
-                            <i class="fa-solid fa-chevron-down" @click="showOption(index)"></i>
-                            <div class="delete-msg" v-if="msgDelete.index === index && msgDelete.show">
-                                <span @click="deleteMessage(index)">Cancella messaggio</span>
+                    <!-- div search -->
+                    <div class="search-div">
+                        <!-- search icon -->
+                        <button class="btn-search"><i class="fa-sharp fa-solid fa-magnifying-glass"></i></button>
+                        <!-- search input -->
+                        <input class="" type="text" placeholder="Cerca o inizia una nuova chat" v-model.trim="searchContact">
+                    </div>
+
+                    <!-- contacts list -->
+                    <div class="contacts-list" :class="{'dark-side' : dark}">
+                        <!-- single contact -->
+                        <div class="single-contact" v-for="(item, index) in filteredContacts" :key="item.id" :class="{'single-contact-active': item.id === currentIndex}" @click="callChat(item.id)">
+                            <!-- img contact -->
+                            <div class="img-single-contact">
+                                <img :src="`./img/avatar${item.avatar}.jpg`" alt="">
+                            </div>
+                            <!-- name contact -->
+                            <div class="name-single-contact">
+                                <span class="fw-bold d-block">{{item.name}}</span>
+                                <span class="d-block last-msg">{{getLastMessage(item).message}}</span>
+                            </div>
+                            <!-- time -->
+                            <div class="time-single-contact">
+                                <span>{{getLastMessage(item).date}}</span>
                             </div>
                         </div>
+                    </div>
+
                 </div>
 
-                <!-- input messages bar -->
-                <div class="bottom-beige-bar"  :class="{'dark-bars' : dark}">
-                    <!-- emoticons -->
-                    <div class="emoticons">
-                        <div id="emoji" v-show="showEmoji">
-                            <span v-for="(icon, index) in icons" :key="index" v-html="icon" @click="addEmoji(index)"></span>
+                <!-- RIGHT column -->
+                <div class="right-column" :class="{'dnone-col' : !showChat}">
+
+                    <!-- single chat controls bar -->
+                    <div class="top-gray-bars single-chat-control-bar"  :class="{'dark-bars' : dark}">
+                        <!-- img contact single chat -->
+                        <div class="img-single-chat">
+                            <img :src="`./img/avatar${contacts[currentIndex].avatar}.jpg`" alt="">
                         </div>
-                        <i class="fa-regular fa-face-smile" @click="showEmoticons"></i>
+                        <!-- name contact single chat -->
+                        <div class="name-single-contact-chat">
+                            <span class="d-block">{{contacts[currentIndex].name}}</span>
+                            <span class="d-block last-msg" v-if="typing">Sta scrivendo...</span>
+                            <span class="d-block last-msg" v-else>Ultimo accesso {{getLastMessage(contacts[currentIndex]).date}}</span>
+                        </div>
+                        <!-- controls single chat -->
+                        <div class="controls-single-chat">
+                            <i class="fa-solid fa-circle-chevron-left pe-3" @click="backToContacts"></i>
+                            <i class="fa-sharp fa-solid fa-magnifying-glass pe-3"></i>
+                            <i class="fa-solid fa-paperclip pe-3"></i>
+                            <i class="fa-solid fa-ellipsis-vertical pe-3"></i>
+                        </div>
                     </div>
-                    <!-- input msg -->
-                    <input type="text" placeholder="Scrivi un messaggio" class="input-message" v-model.trim="newMessage" @keyup.enter="sendMessage">
-                    <!-- mic -->
-                    <div class="plane-mic">
-                        <i class="fa-solid fa-paper-plane pe-3" v-show="newMessage != ''" @click="sendMessage"></i>
-                        <i class="fa-solid fa-microphone"></i>
+
+                    <!-- single chat content -->
+                    <div class="single-chat-content">
+                            <!-- msgs -->
+                            <div v-for="(elem, index) in contacts[currentIndex].messages" :key="index" :class="elem.status" ref="msg">
+                                <p v-html="elem.message"></p>
+                                <i class="fa-solid fa-chevron-down" @click="showOption(index)"></i>
+                                <div class="delete-msg" v-if="msgDelete.index === index && msgDelete.show">
+                                    <span @click="deleteMessage(index)">Cancella messaggio</span>
+                                </div>
+                            </div>
+                    </div>
+
+                    <!-- input messages bar -->
+                    <div class="bottom-beige-bar"  :class="{'dark-bars' : dark}">
+                        <!-- emoticons -->
+                        <div class="emoticons">
+                            <div id="emoji" v-show="showEmoji">
+                                <span v-for="(icon, index) in icons" :key="index" v-html="icon" @click="addEmoji(index)"></span>
+                            </div>
+                            <i class="fa-regular fa-face-smile" @click="showEmoticons"></i>
+                        </div>
+                        <!-- input msg -->
+                        <input type="text" placeholder="Scrivi un messaggio" class="input-message" v-model.trim="newMessage" @keyup.enter="sendMessage">
+                        <!-- mic -->
+                        <div class="plane-mic">
+                            <i class="fa-solid fa-paper-plane pe-3" v-show="newMessage != ''" @click="sendMessage"></i>
+                            <i class="fa-solid fa-microphone"></i>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-
     </div>
 
     <!-- js -->
