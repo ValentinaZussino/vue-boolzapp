@@ -6,6 +6,7 @@ createApp({
             currentIndex: 0,
             newMessage: '',
             searchContact: '',
+            dark: false,
             showChat: false,
             typing: false,
             showEmoji: false,
@@ -268,6 +269,9 @@ createApp({
         }
     },
     methods: {
+        darkMode(){
+            this.dark = !this.dark
+        },
         callChat(id){
             this.currentIndex = this.contacts.findIndex((item)=> id === item.id );
             this.backToContacts();
@@ -286,8 +290,9 @@ createApp({
             }
             this.contacts[this.currentIndex].messages.push(newSentMessage);
             this.newMessage = '';
-            this.autoReply();
             this.typing = true;
+            this.autoReply();
+            
             this.$nextTick(()=> {
                 const el =  this.$refs.msg[this.$refs.msg.length - 1 ];
                 el.scrollIntoView({behavior: "smooth", block: "end", inline: "nearest"});

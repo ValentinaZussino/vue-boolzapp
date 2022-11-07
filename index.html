@@ -12,7 +12,7 @@
 </head>
 <body>
     <!-- MAIN WRAPPER -->
-    <div id="app" class="main-wrapper">
+    <div id="app" class="main-wrapper"  :class="{'dark-bground' : dark}">
 
         <!-- CENTRAL CONTAINER -->
         <div class="central-container">
@@ -21,7 +21,7 @@
             <div class="left-column" :class="{'dnone-col' : showChat}">
 
                 <!-- div user -->
-                <div class="top-gray-bars user-control-bar">
+                <div class="top-gray-bars user-control-bar"  :class="{'dark-bars' : dark}">
                     <!-- img user -->
                     <div class="img-user">
                         <img src="./img/avatar_io.jpg" alt="">
@@ -32,7 +32,7 @@
                     </div>
                     <!-- user controls -->
                     <div class="controls-user">
-                        <i class="fa-solid fa-circle-notch pe-3"></i>
+                        <i class="fa-solid fa-circle-notch pe-3" @click="darkMode"></i>
                         <i class="fa-solid fa-message pe-3"></i>
                         <i class="fa-solid fa-ellipsis-vertical pe-3"></i>
                     </div>
@@ -60,7 +60,7 @@
                 </div>
 
                 <!-- contacts list -->
-                <div class="contacts-list">
+                <div class="contacts-list" :class="{'dark-side' : dark}">
                     <!-- single contact -->
                     <div class="single-contact" v-for="(item, index) in filteredContacts" :key="item.id" :class="{'single-contact-active': item.id === currentIndex}" @click="callChat(item.id)">
                         <!-- img contact -->
@@ -85,7 +85,7 @@
             <div class="right-column" :class="{'dnone-col' : !showChat}">
 
                 <!-- single chat controls bar -->
-                <div class="top-gray-bars single-chat-control-bar">
+                <div class="top-gray-bars single-chat-control-bar"  :class="{'dark-bars' : dark}">
                     <!-- img contact single chat -->
                     <div class="img-single-chat">
                         <img :src="`./img/avatar${contacts[currentIndex].avatar}.jpg`" alt="">
@@ -118,7 +118,7 @@
                 </div>
 
                 <!-- input messages bar -->
-                <div class="bottom-beige-bar">
+                <div class="bottom-beige-bar"  :class="{'dark-bars' : dark}">
                     <!-- emoticons -->
                     <div class="emoticons">
                         <div id="emoji" v-show="showEmoji">
